@@ -4,8 +4,10 @@ module.exports = {
             create: function(context) {
                 return {
                     JSXElement(node) {
+                        // Search for all <a> tags
                         if (node.openingElement.name.name === 'a') {
-                            if (node.leadingComments.some(comment => comment.value.trim() === 'eslint-disable-use-gatsby-link')) {
+                            // Check if the <a> tag is marked as an exception
+                            if (node.leadingComments && node.leadingComments.some(comment => comment.value.trim() === 'eslint-disable-use-gatsby-link')) {
                                 return;
                             }
 
