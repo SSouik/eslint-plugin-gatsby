@@ -35,20 +35,19 @@ Sample File: `.eslintrc` or `.eslintrc.json`
 
 ```json
 {
-  env: { ... },
-  extends: [eslint:recommended],
-  parserOptions: {
-    ecmaFeatures: {
+  "env": { },
+  "extends": ["eslint:recommended"],
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": true,
     },
     "ecmaVersion": 11,
     "sourceType": "module",
   },
   "parser": "babel-eslint",
-  "plugins": ["react", "gatsby"], // include gatsby plugin
+  "plugins": ["react", "gatsby"],
   "rules": {
-    ...
-    "gatsby/use-gatsby-link": "error" // select eslint rules for gatsby
+    "gatsby/use-gatsby-link": "error"
   }
 }
 ```
