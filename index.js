@@ -1,7 +1,8 @@
 module.exports = {
     rules: {
         'use-gatsby-link': require('./rules/use-gatsby-link'),
-        'purify-html': require('./rules/purify-html')
+        'purify-html': require('./rules/purify-html'),
+        'no-import-json': require('./rules/no-import-json')
     },
     configs: {
         recommended: {
@@ -16,7 +17,8 @@ module.exports = {
             },
             rules: {
                 'gatsby/use-gatsby-link': 'error',
-                'gatsby/purify-html': 'warn'
+                'gatsby/purify-html': 'warn',
+                'gatsby/no-import-json': 'warn'
             }
         },
         all: {
