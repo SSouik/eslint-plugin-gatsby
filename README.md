@@ -5,9 +5,10 @@ Collection of eslint rules made specifically for Gatsby. This package is meant t
 ## Table of Contents
 - [Installation](#installation)
 - [How to Use](#how-to-use)
-    - [JSON](#json)
-    - [JavaScript](#javascript)
-    - [YAML](#yaml)
+  - [Plugins](#plugins)
+  - [Extends](#extends)
+  - [Manually](#manually)
+- [Rules](./docs/rules.md)
 - [Motivation](#motivation)
 - [Authors](#authors)
 
@@ -29,86 +30,123 @@ yarn add --dev eslint-plugin-gatsby
 
 ## How to Use
 
-### JSON
+### Plugins
+To add the plugin into your ESLint config, add the `gatsby` plugin into the plugins array.
 
-Sample File: `.eslintrc` or `.eslintrc.json`
+##### JSON
 
-```json
+```javascript
 {
-  "env": { },
-  "extends": ["eslint:recommended"],
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true,
-    },
-    "ecmaVersion": 11,
-    "sourceType": "module",
-  },
-  "parser": "babel-eslint",
-  "plugins": ["gatsby"],
-  "rules": {
-    "gatsby/use-gatsby-link": "error"
-  }
+  ...
+  "plugins": ["gatsby"]
+  ...
+  // rest of ESLint config
 }
 ```
 
-> This is a minimal sample version of an eslint config file. What's important to note is the `gatsby` plugin in the `plugins` array and the use of a specific rule `gatsby/use-gatsby-link` under the `rules` object
-
-<br/>
-
-### JavaScript
-Sample File: `.eslintrc.js`
+##### JavaScript
 
 ```javascript
 module.exports = {
-  env: { ... },
-  extends: ['eslint:recommended'],
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 11,
-    sourceType: 'module',
-  },
-  parser: 'babel-eslint',
-  plugins: ['gatsby'], // include gatsby plugin
-  rules: {
-    ...
-    'gatsby/use-gatsby-link': 'error' // select eslint rules for gatsby
-  }
+  ...
+  plugins: ['gatsby']
+  ...
+  // rest of ESLint config
 }
 ```
 
-> This is a minimal sample version of an eslint config file. What's important to note is the `gatsby` plugin in the `plugins` array and the use of a specific rule `gatsby/use-gatsby-link` under the `rules` object
+##### YAML
+
+```yaml
+...
+plugins:
+  - gatsby
+...
+# rest of ESLint config
+```
 
 <br/>
+<hr/>
+<br/>
 
-### YAML
-Sample File: `.eslintrc.yml`
+### Extends
+This library has a default recommended config that your ESLint config can extend. To do so, add the line `'plugin:gatsby/recommended'` to the extends array.
 
-```yml
-env:
-  browser: true
-  es2020: true
-  node: true
-  jest: true
-extends:
-  - 'eslint:recommended'
-parserOptions:
-  ecmaFeatures:
-    jsx: true
-  ecmaVersion: 11
-  sourceType: module
-parser: 'babel-eslint'
-plugins:
-  - gatsby # include gatsby plugin
-rules: {
+##### JSON
+
+```javascript
+{
   ...
-  'gatsby/use-gatsby-link': 'error' # select eslint rules for gatsby
+  "extends": ["plugin:gatsby/recommended"]
+  ...
+  // rest of ESLint config
 }
 ```
 
-> This is a minimal sample version of an eslint config file. What's important to note is the `gatsby` plugin in the `plugins` array and the use of a specific rule `gatsby/use-gatsby-link` under the `rules` object
+##### JavaScript
+
+```javascript
+module.exports = {
+  ...
+  extends: ['plugin:gatsby/recommended']
+  ...
+  // rest of ESLint config
+}
+```
+
+##### YAML
+
+```yaml
+...
+extends:
+  - 'plugin:gatsby/recommended'
+...
+# rest of ESLint config
+```
+
+<br/>
+<hr/>
+<br/>
+
+### Manually
+In the case that you do not want to extend the recommended rules or you want to override some of the recommended rules, you can manually configure the rules within the object
+
+##### JSON
+
+```javascript
+{
+  ...
+  "rules": {
+    "gatsby/use-gatsby-link": "warn" // set use-gastby-link to be an ESLint warning
+  }
+  ...
+  // rest of ESLint config
+}
+```
+
+##### JavaScript
+
+```javascript
+module.exports = {
+  ...
+  'rules': {
+    'gatsby/use-gatsby-link': 'warn' // set use-gastby-link to be an ESLint warning
+  }
+  ...
+  // rest of ESLint config
+}
+```
+
+##### YAML
+
+```yaml
+...
+rules: {
+  'gatsby/use-gatsby-link': 'warn' # set use-gastby-link to be an ESLint warning
+}
+...
+# rest of ESLint config
+```
 
 <br/>
 <hr/>
