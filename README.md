@@ -3,13 +3,13 @@
 Collection of eslint rules made specifically for Gatsby. This package is meant to be a plugin for eslint within Gatsby projects and is configurable just like other eslint rules and plugins.
 
 ## Table of Contents
-- [Installation](#Installation)
-- [How to Use](#How-to-Use)
-    - [JSON](#JSON)
-    - [JavaScript](#JavaScript)
-    - [YAML](#YAML)
-- [Motivation](#Motivation)
-- [Authors](#Authors)
+- [Installation](#installation)
+- [How to Use](#how-to-use)
+    - [JSON](#json)
+    - [JavaScript](#javascript)
+    - [YAML](#yaml)
+- [Motivation](#motivation)
+- [Authors](#authors)
 
 <br/>
 <hr/>
@@ -45,7 +45,7 @@ Sample File: `.eslintrc` or `.eslintrc.json`
     "sourceType": "module",
   },
   "parser": "babel-eslint",
-  "plugins": ["react", "gatsby"],
+  "plugins": ["gatsby"],
   "rules": {
     "gatsby/use-gatsby-link": "error"
   }
@@ -71,7 +71,7 @@ module.exports = {
     sourceType: 'module',
   },
   parser: 'babel-eslint',
-  plugins: ['react', 'gatsby'], // include gatsby plugin
+  plugins: ['gatsby'], // include gatsby plugin
   rules: {
     ...
     'gatsby/use-gatsby-link': 'error' // select eslint rules for gatsby
@@ -101,7 +101,6 @@ parserOptions:
   sourceType: module
 parser: 'babel-eslint'
 plugins:
-  - react
   - gatsby # include gatsby plugin
 rules: {
   ...

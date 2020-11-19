@@ -1,10 +1,24 @@
 {
   "name": "eslint-plugin-gatsby",
   "version": "1.0.1",
-  "description": "Eslint rules customized for Gatsby",
+  "author": "Samuel Souik <samuel.souik@gmail.com>",
+  "description": "ESLint rules specific to Gatsby",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Samuel Souik <samuel.souik@gmail.com>"
+  "keywords": [
+    "eslint",
+    "eslint-plugin",
+    "eslintplugin",
+    "react",
+    "gatsby"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SSouik/eslint-plugin-gatsby"
+  },
+  "bugs": {
+    "url": "https://github.com/SSouik/eslint-plugin-gatsby/issues"
+  }
 }
